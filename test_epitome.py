@@ -32,7 +32,8 @@ def test_generated_tree(cookies):
     project = Path(result.project)
     # https://stackoverflow.com/questions/54401973/pythons-pathlib-get-parents-relative-path
     generated_paths = [
-        str(path.relative_to(project))
+        # https://stackoverflow.com/questions/53997726/can-python3s-pathlib-be-used-portably-between-linux-and-windows-systems
+        str(path.relative_to(project)).replace('\\', '/')
         for path in project.rglob("*")
     ]
 
