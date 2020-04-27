@@ -39,6 +39,13 @@ def test_generated_tree(cookies):
 
     expected_paths = [
         'README.md',
+        '.gitignore',
+        '.pre-commit-config.yaml',
+        '.cookiecutterrc',
+        '.envrc',
+        'pyproject.toml',
+        'tox.ini',
+        '.travis.yml',
         'src',
         'src/skeletor.py',
         'tests',
