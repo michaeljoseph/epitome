@@ -1,0 +1,9 @@
+# This file exists so you can easily regenerate your project.
+#
+#    cookiecutter -f --no-input --config-file=project-path/.cookiecutterrc gh:michaeljoseph/epitome
+
+default_context:
+    _template:                 '.'
+    author:                    'Michael Joseph <michaeljoseph+github@gmail.com>'
+    description:               'an example project'
+    project_name:              'example'
