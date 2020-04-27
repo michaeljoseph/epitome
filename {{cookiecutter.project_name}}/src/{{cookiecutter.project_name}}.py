@@ -13,9 +13,17 @@ colorful.use_style('solarized')
 emojize = partial(emoji.emojize, use_aliases=True)
 
 
-@click.option('--debug', help='Enables debug logging.', is_flag=True, default=False)
+def greeting(name: str):
+    name = name if name else 'World'
+    return emojize(f':wave: Hello {name}.')
+
+
 @click.group(context_settings=dict(help_option_names=[u'-h', u'--help']))
-def {{ cookiecutter.project_name }}(debug: bool):
+@click.option('--debug', help='Enables debug logging.', is_flag=True, default=False)
+@click.option(
+    '--trace', help='Enables heartrate execution visualisation.', is_flag=True, default=False
+)
+def main(debug: bool, trace: bool):
     """{{ cookiecutter.description }}"""
     coloredlogs.install(
         fmt=(
@@ -29,7 +37,8 @@ def {{ cookiecutter.project_name }}(debug: bool):
         heartrate.trace()
 
 
-@{{ cookiecutter.project_name }}.command()
-@click.argument('your_name')
+@main.command()
+@click.argument('your_name', required=False)
 def hello(your_name: str):
-    print(f'Hello {your_name}')
+    """What's your name?"""
+    print(greeting(your_name))
