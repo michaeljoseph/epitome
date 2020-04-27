@@ -10,19 +10,24 @@ include = [
 ]
 
 [tool.poetry.scripts]
-{{ cookiecutter.project_name }} = '{{ cookiecutter.project_name }}:{{ cookiecutter.project_name }}'
+{{ cookiecutter.project_name }} = '{{ cookiecutter.project_name }}:main'
 
 [tool.poetry.dependencies]
 python = "^3.6"
 click = "^7.0"
+heartrate = "^0.2.1"
+coloredlogs = "^10.0"
+emoji = "^0.5.4"
+colorful = "^0.5.4"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^1.18"
 pytest-cov = "^2.7"
 pytest-watch = "^4.2"
+pytest-mock = "^1.10"
 
 [tool.black]
-line-length = 88
+line-length = 100
 skip-string-normalization = "True"
 
 [build-system]
