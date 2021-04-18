@@ -40,6 +40,7 @@ def test_generated_tree(cookies):
 
     assert project.joinpath('.git').exists()
     assert project.joinpath('.gitignore').exists()
+    assert project.joinpath('.github/workflows/test.yml').exists()
 
     expected_paths = [
         'README.md',
