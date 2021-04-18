@@ -3,6 +3,9 @@ name = "{{ cookiecutter.project_name }}"
 version = "0.0.1"
 description = "{{ cookiecutter.description }}"
 authors = ["{{ cookiecutter.author }}"]
+packages = [
+    { include = "{{ cookiecutter.project_name }}", from = "src" },
+]
 include = [
     "README.md",
     "tox.ini",
@@ -10,7 +13,7 @@ include = [
 ]
 
 [tool.poetry.scripts]
-{{ cookiecutter.project_name }} = '{{ cookiecutter.project_name }}:{{ cookiecutter.project_name }}'
+{{ cookiecutter.project_name }} = '{{ cookiecutter.project_name }}.cli:main'
 
 [tool.poetry.dependencies]
 python = "^3.6"
