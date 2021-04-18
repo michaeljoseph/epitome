@@ -24,6 +24,7 @@ def test_epitome(cookies):
 
 
 def test_generated_tree(cookies):
+    # TODO: set git author config and $HOME
     result = cookies.bake()
 
     assert result.exception is None
@@ -37,9 +38,11 @@ def test_generated_tree(cookies):
         for path in project.rglob("*")
     ]
 
+    assert project.joinpath('.git').exists()
+    assert project.joinpath('.gitignore').exists()
+
     expected_paths = [
         'README.md',
-        '.gitignore',
         '.pre-commit-config.yaml',
         '.cookiecutterrc',
         '.envrc',
@@ -51,4 +54,6 @@ def test_generated_tree(cookies):
         'tests',
         'tests/test_skeletor.py',
     ]
+    # remove .git paths
+    generated_paths = [p for p in generated_paths if not p.startswith('.git')]
     assert sorted(expected_paths) == sorted(generated_paths)
