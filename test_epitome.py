@@ -44,6 +44,7 @@ def test_generated_tree(cookies):
     expected_paths = [
         'README.md',
         '.pre-commit-config.yaml',
+        '.tool-versions',
         '.cookiecutterrc',
         '.envrc',
         'pyproject.toml',
