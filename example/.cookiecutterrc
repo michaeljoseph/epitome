@@ -1,6 +1,6 @@
 # This file exists so you can easily regenerate your project.
 #
-#    cookiecutter -f --no-input --config-file=project-path/.cookiecutterrc gh:michaeljoseph/epitome
+#    cookiecutter -f --no-input --config-file=example/.cookiecutterrc gh:michaeljoseph/epitome
 
 default_context:
     _template:                 '.'

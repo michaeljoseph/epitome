@@ -8,6 +8,7 @@ authors = ["Michael Joseph <michaeljoseph+github@gmail.com>"]
 python = "^3.6"
 
 [tool.poetry.dev-dependencies]
+pre-commit = "^1.18"
 pytest-cookies = "^0.4.0"
 pytest-watch = "^4.2"
 

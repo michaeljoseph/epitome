@@ -3,6 +3,9 @@ name = "example"
 version = "0.0.1"
 description = "an example project"
 authors = ["Michael Joseph <michaeljoseph+github@gmail.com>"]
+packages = [
+    { include = "example", from = "src" },
+]
 include = [
     "README.md",
     "tox.ini",
@@ -10,7 +13,7 @@ include = [
 ]
 
 [tool.poetry.scripts]
-example = 'example:example'
+example = 'example.cli:main'
 
 [tool.poetry.dependencies]
 python = "^3.6"

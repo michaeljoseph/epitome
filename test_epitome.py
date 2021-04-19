@@ -40,17 +40,22 @@ def test_generated_tree(cookies):
 
     assert project.joinpath('.git').exists()
     assert project.joinpath('.gitignore').exists()
+    assert project.joinpath('.github/workflows/test.yml').exists()
 
     expected_paths = [
         'README.md',
         '.pre-commit-config.yaml',
+        '.tool-versions',
         '.cookiecutterrc',
         '.envrc',
         'pyproject.toml',
+        'requirements.txt',
         'tox.ini',
         '.travis.yml',
         'src',
-        'src/skeletor.py',
+        'src/skeletor',
+        'src/skeletor/__init__.py',
+        'src/skeletor/cli.py',
         'tests',
         'tests/test_skeletor.py',
     ]
